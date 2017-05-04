@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  authenticate :user, -> user {user.admin?} do
+    mount Delayed::Web::Engine, at: '/jobs'
+  end
   get 'auth/:provider/callback', to: 'connections#create'
   resources :connections, only: [:destroy]
   resources :posts
