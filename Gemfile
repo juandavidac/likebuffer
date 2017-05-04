@@ -61,3 +61,5 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'dotenv-rails'
+
+gem 'omniauth-twitter'
