@@ -23,7 +23,7 @@
 				<%= link_to 'Connect facebook', 'auth/facebook', class: 'btn btn-primary btn-block btn-sm' %>
 			<%else%>
 				<%= link_to 'Connect Facebook', 'auth/facebook', class: 'btn btn-primary btn-block btn-sm', disabled: true %>
-				<%= link_to 'Delete Connection with FB', connection_path(current_user.connections.where(provider: 'facebook').first), method: :delete %>
+				<%= link_to 'Delete Connection', connection_path(current_user.connections.where(provider: 'facebook').first), method: :delete %>
 			<%end%>
 		</div>
 
