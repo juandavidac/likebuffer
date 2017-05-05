@@ -4,7 +4,7 @@
       <span class="label label-primary">Facebook</span>
     <% end %>
     <% if post.twitter == true %>
-      <span class="label label-info">Twitter</span> 
+      <span class="label label-info">Twitter</span>
     <% end %>
     Scheduled on <%= post.scheduled_at %>
   </div>
@@ -13,5 +13,6 @@
   </div>
   <div class="panel-footer">
     <%= post.state.capitalize %>
+    <%= link_to 'cancel post', cancel_post_path(post), method: :put if post.state == 'scheduled' %>
   </div>
 </div>
